@@ -1076,7 +1076,7 @@
         <div class="card-header msg_head">
           <div class="d-flex bd-highlight">
             <div class="img_cont">
-              <img src="img/images.png" class="rounded-circle user_img">
+              <img src="img//avatar-8.png" class="rounded-circle user_img">
               <span class="online_icon"></span>
             </div>
             <div class="user_info">
@@ -1247,7 +1247,7 @@
     }
     let return_data = '<div class="d-flex justify-content-start mb-4">';
     return_data +=  '<div class="img_cont_msg">';
-    return_data +=  '<img src="img/images.png"class="rounded-circle user_img_msg">';
+    return_data +=  '<img src="img/avatar-8.png"class="rounded-circle user_img_msg">';
     return_data +=  '</div>';
     return_data +=  '<div class="msg_cotainer">';
     return_data +=  message;
@@ -1474,12 +1474,80 @@ function format_datetime(i){
       zoom: 8.5,
       disableDefaultUI: true,
       center: {
-        lat: 16.001674,
-        lng: 108.222827
-      }
+        lat: 15.821075,
+        lng: 108.267442
+      },
+      gestureHandling: 'none',
+          zoomControl: false,
     })
 
 
+    const hueBounds = new google.maps.LatLngBounds();
+    const hueLine = new google.maps.Polygon({
+      paths: hueData.data,
+      strokeColor: 'blue',
+      strokeOpacity: 1,
+      strokeWeight: 1.5,
+      fillColor: 'blue',
+      fillOpacity: 0
+    });
+    for (i = 0; i < hueData.data.length; i++) {
+      hueBounds.extend(hueData.data[i]);
+    }
+    const hueMarker = new google.maps.Marker({
+      map: map,
+      icon: {
+        url: './img/red-dot.png',
+        anchor: new google.maps.Point(5, 5),
+        scaledSize: new google.maps.Size(10, 10)
+      },
+      position: {
+        lat: hueBounds.getCenter().lat(),
+        lng: hueBounds.getCenter().lng()
+      }
+    })
+
+    let htmlHue = ` 
+      <a href="/demo" target="_blank" class="library360__location" style="width: 30%;height: 200px;margin-bottom: 5px;display: flex;flex-direction: column;justify-content: space-between;">
+        <img src="./img/hue-1.jpg" style="width: 100%; height: 85%;" alt="">
+        <p style="text-align: center">Địa điểm 1</p>
+      </a>
+      <a href="/demo" target="_blank" class="library360__location" style="width: 30%;height: 200px;margin-bottom: 5px;display: flex;flex-direction: column;justify-content: space-between;">
+        <img src="./img/hue-2.jpg" style="width: 100%; height: 85%;" alt="">
+        <p style="text-align: center">Địa điểm 2</p>
+      </a>
+      <a href="/demo" target="_blank" class="library360__location" style="width: 30%;height: 200px;margin-bottom: 5px;display: flex;flex-direction: column;justify-content: space-between;">
+        <img src="./img/hue-3.jpg" style="width: 100%; height: 85%;" alt="">
+        <p style="text-align: center">Địa điểm 3</p>
+      </a>
+    `
+    const hueInfoWindow = new google.maps.InfoWindow({
+        content: hueData.name
+      })
+
+    hueInfoWindow.open(map, hueMarker)
+    hueLine.setMap(map);
+
+    hueLine.addListener('click',() => {
+      $('.library360__title').text(`Các địa điểm ở ${hueData.name}`)
+      $('.library360__locations').html('')
+      $('.library360__locations').html(htmlHue)
+    })
+
+    hueLine.addListener('mouseover',() => {
+      hueLine.setOptions({
+        fillOpacity: 1
+      })
+    })
+
+    hueLine.addListener('mouseout',() => {
+      hueLine.setOptions({
+        fillOpacity: 0
+      })
+    })
+
+
+    const hoiAnBounds = new google.maps.LatLngBounds();
     const hoiAnLine = new google.maps.Polygon({
       paths: hoiAnData.data,
       strokeColor: 'red',
@@ -1488,11 +1556,60 @@ function format_datetime(i){
       fillColor: 'red',
       fillOpacity: 0
     });
-
+    for (i = 0; i < hoiAnData.data.length; i++) {
+      hoiAnBounds.extend(hoiAnData.data[i]);
+    }
+    const hoiAnMarker = new google.maps.Marker({
+      map: map,
+      icon: {
+        url: './img/red-dot.png',
+        anchor: new google.maps.Point(5, 5),
+        scaledSize: new google.maps.Size(10, 10)
+      },
+      position: {
+        lat: hoiAnBounds.getCenter().lat(),
+        lng: hoiAnBounds.getCenter().lng()
+      }
+    })
+    let htmlHoiAn = ` 
+      <a href="/demo" target="_blank" class="library360__location" style="width: 30%;height: 200px;margin-bottom: 5px;display: flex;flex-direction: column;justify-content: space-between;">
+        <img src="./img/hoi-an-1.jpg" style="width: 100%; height: 85%;" alt="">
+        <p style="text-align: center">Địa điểm 1</p>
+      </a>
+      <a href="/demo" target="_blank" class="library360__location" style="width: 30%;height: 200px;margin-bottom: 5px;display: flex;flex-direction: column;justify-content: space-between;">
+        <img src="./img/hoi-an-2.jpg" style="width: 100%; height: 85%;" alt="">
+        <p style="text-align: center">Địa điểm 2</p>
+      </a>
+      <a href="/demo" target="_blank" class="library360__location" style="width: 30%;height: 200px;margin-bottom: 5px;display: flex;flex-direction: column;justify-content: space-between;">
+        <img src="./img/hoi-an-3.jpg" style="width: 100%; height: 85%;" alt="">
+        <p style="text-align: center">Địa điểm 3</p>
+      </a>
+    `
+    const hoiAnInfoWindow = new google.maps.InfoWindow({
+        content: hoiAnData.name
+      })
+      hoiAnInfoWindow.open(map, hoiAnMarker)
     hoiAnLine.setMap(map);
 
+    hoiAnLine.addListener('click',() => {
+      $('.library360__title').text(`Các địa điểm ở ${hoiAnData.name}`)
+      $('.library360__locations').html('')
+      $('.library360__locations').html(htmlHoiAn)
+    })
 
+    hoiAnLine.addListener('mouseover',() => {
+      hoiAnLine.setOptions({
+        fillOpacity: 1
+      })
+    })
 
+    hoiAnLine.addListener('mouseout',() => {
+      hoiAnLine.setOptions({
+        fillOpacity: 0
+      })
+    })
+
+    
 
     const danangBounds = new google.maps.LatLngBounds();
     const danangLine = new google.maps.Polygon({
@@ -1572,69 +1689,12 @@ function format_datetime(i){
       })
     })
 
-    const hueBounds = new google.maps.LatLngBounds();
-    const hueLine = new google.maps.Polygon({
-      paths: hueData.data,
-      strokeColor: 'blue',
-      strokeOpacity: 1,
-      strokeWeight: 1.5,
-      fillColor: 'blue',
-      fillOpacity: 0
-    });
-    for (i = 0; i < hueData.data.length; i++) {
-      hueBounds.extend(hueData.data[i]);
-    }
-    const hueMarker = new google.maps.Marker({
-      map: map,
-      icon: {
-        url: './img/red-dot.png',
-        anchor: new google.maps.Point(5, 5),
-        scaledSize: new google.maps.Size(10, 10)
-      },
-      position: {
-        lat: hueBounds.getCenter().lat(),
-        lng: hueBounds.getCenter().lng()
-      }
-    })
 
-    let htmlHue = ` 
-      <a href="/demo" target="_blank" class="library360__location" style="width: 30%;height: 200px;margin-bottom: 5px;display: flex;flex-direction: column;justify-content: space-between;">
-        <img src="./img/hue-1.jpg" style="width: 100%; height: 85%;" alt="">
-        <p style="text-align: center">Địa điểm 1</p>
-      </a>
-      <a href="/demo" target="_blank" class="library360__location" style="width: 30%;height: 200px;margin-bottom: 5px;display: flex;flex-direction: column;justify-content: space-between;">
-        <img src="./img/hue-2.jpg" style="width: 100%; height: 85%;" alt="">
-        <p style="text-align: center">Địa điểm 2</p>
-      </a>
-      <a href="/demo" target="_blank" class="library360__location" style="width: 30%;height: 200px;margin-bottom: 5px;display: flex;flex-direction: column;justify-content: space-between;">
-        <img src="./img/hue-3.jpg" style="width: 100%; height: 85%;" alt="">
-        <p style="text-align: center">Địa điểm 3</p>
-      </a>
-    `
-    const hueInfoWindow = new google.maps.InfoWindow({
-        content: hueData.name
-      })
+    $('.library360__title').text(`Các địa điểm ở Đà Nẵng`)
+    $('.library360__locations').html('')
+    $('.library360__locations').html(htmlDaNang)
 
-    hueInfoWindow.open(map, hueMarker)
-    hueLine.setMap(map);
 
-    hueLine.addListener('click',() => {
-      $('.library360__title').text(`Các địa điểm ở ${hueData.name}`)
-      $('.library360__locations').html('')
-      $('.library360__locations').html(htmlHue)
-    })
-
-    hueLine.addListener('mouseover',() => {
-      hueLine.setOptions({
-        fillOpacity: 1
-      })
-    })
-
-    hueLine.addListener('mouseout',() => {
-      hueLine.setOptions({
-        fillOpacity: 0
-      })
-    })
 
     
     $('#input-message').keypress(function(e) {
