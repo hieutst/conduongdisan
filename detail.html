@@ -14,7 +14,13 @@
     <link href="css/mdb.min.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
     <link href="css/style.css" rel="stylesheet">
+  <style>
+    .comment {
+      margin-bottom: 5px;
+    }
+  </style>
   </head>
+
 
   <body>
 
@@ -100,11 +106,11 @@
     <div class="col-md-5 travel_detail_base_info" style="">
       <span class="tiet-kiem">Tiết Kiệm</span>
       <div class="rate_tours">
-        <span><i class="far fa-star" onmouseover="choose_star_hotel(this)"></i></span>
-        <span><i class="far fa-star" onmouseover="choose_star_hotel(this)"></i></span>
-        <span><i class="far fa-star" onmouseover="choose_star_hotel(this)"></i></span>
-        <span><i class="far fa-star" onmouseover="choose_star_hotel(this)"></i></span>
-        <span><i class="far fa-star" onmouseover="choose_star_hotel(this)"></i></span>
+        <span><i class="far fa-star" onclick="chooseStart(this)" onmouseover="choose_star_hotel(this)"></i></span>
+        <span><i class="far fa-star" onclick="chooseStart(this)" onmouseover="choose_star_hotel(this)"></i></span>
+        <span><i class="far fa-star" onclick="chooseStart(this)" onmouseover="choose_star_hotel(this)"></i></span>
+        <span><i class="far fa-star" onclick="chooseStart(this)" onmouseover="choose_star_hotel(this)"></i></span>
+        <span><i class="far fa-star" onclick="chooseStart(this)" onmouseover="choose_star_hotel(this)"></i></span>
       </div>
       <span><b>Mã tour:</b> NDHUE057-004-200419XE</span>
       <span><b>Khởi hành:</b> 10/04/2019</span>
@@ -143,6 +149,13 @@
 
       <span> Xe đưa quý khách đi ăn trưa, trước khi khởi hành về Huế.</span>
       <span>Đến Huế, xe trả khách tại điểm ban đầu, chia tay, kết thúc chương trình tham quan.</span>
+
+      <br />
+      <br />
+      <br />
+      <div id="rating">
+        <img src="img/rating.png" alt="">
+      </div>
     </div>
 
     <div class="col-md-4 col-sm-12 col-sx-12">
@@ -179,36 +192,76 @@
        <div class="row">
 
          <div class="col-md-12 comment">
-           <img src="img/images.png" alt="Phạm Duy Linh">
+           <img src="img/avatar-1.jpg" alt="Phạm Duy Linh">
            <div>
-             <span><b>Phạm Duy Linh</b> <i>3 phút trước</i></span>
+             <span><b>Tô Hải Nam</b> <i>3 phút trước</i></span>
              <span>Nơi này thật là đẹp</span>
            </div>
          </div>
 
          <div class="col-md-12 comment">
-           <img src="img/images.png" alt="Phạm Duy Linh">
+           <img src="img/avatar-2.jpg" alt="Phạm Duy Linh">
            <div>
-             <span><b>Phạm Duy Linh</b> <i>3 phút trước</i></span>
-             <span>Nơi này thật là đẹp</span>
+             <span><b>Nguyễn Hiếu</b> <i>10 phút trước</i></span>
+             <span>Đồ ăn ở đây rất ngon</span>
            </div>
          </div>
 
          <div class="col-md-12 comment">
-           <img src="img/images.png" alt="Phạm Duy Linh">
+           <img src="img/avatar-3.jpg" alt="Phạm Duy Linh">
            <div>
-             <span><b>Phạm Duy Linh</b> <i>3 phút trước</i></span>
-             <span>Nơi này thật là đẹp</span>
+             <span><b>Kim Cúc</b> <i>20 phút trước</i></span>
+             <span>Khách sạn vừa sang vừa rẻ</span>
            </div>
          </div>
 
          <div class="col-md-12 comment">
-           <img src="img/images.png" alt="Phạm Duy Linh">
+           <img src="img/avatar-4.jpg" alt="Phạm Duy Linh">
            <div>
-             <span><b>Phạm Duy Linh</b> <i>3 phút trước</i></span>
-             <span>Nơi này thật là đẹp</span>
+             <span><b>Hà Chớp</b> <i>30 phút trước</i></span>
+             <span>Con người rất thân thiện</span>
            </div>
          </div>
+
+         <div class="col-md-12 comment">
+          <img src="img/avatar-5.png" alt="Phạm Duy Linh">
+          <div>
+            <span><b>Phạm Duy Linh</b> <i>40 phút trước</i></span>
+            <span>Tôi chỉ đánh giá 5* và không nói gì thêm</span>
+          </div>
+        </div>
+
+        <div class="col-md-12 comment">
+          <img src="img/avatar-6.png" alt="Phạm Duy Linh">
+          <div>
+            <span><b>Phương Anh</b> <i>Một ngày trước</i></span>
+            <span>Hướng dẫn viên rất đẹp trai</span>
+          </div>
+        </div>
+
+        <div class="col-md-12 comment">
+          <img src="img/avatart-7.png" alt="Phạm Duy Linh">
+          <div>
+            <span><b>Isarel</b> <i>2 ngày trước</i></span>
+            <span>Good and 5*</span>
+          </div>
+        </div>
+
+        <div class="col-md-12 comment">
+          <img src="img/avatart-9.png" alt="Phạm Duy Linh">
+          <div>
+            <span><b>Ngọc Nguyễn</b> <i>10 ngày trước</i></span>
+            <span>Đồ ăn ngon, cảnh đẹp</span>
+          </div>
+        </div>
+
+        <div class="col-md-12 comment">
+          <img src="img/avatar-10.png" alt="Phạm Duy Linh">
+          <div>
+            <span><b>Phương Linh</b> <i>11 ngày trước</i></span>
+            <span>Nơi này thật là đẹp</span>
+          </div>
+        </div>
         <h4 style="margin-top: 20px">Để lại ý kiến cá nhân của bạn: </h4>
          <div class="col-md-12">
            <form action="" style="width: 100%;">
@@ -416,6 +469,11 @@
      $(".travel_contact_off").show(500);
    })
   }
+  function chooseStart(e) {
+    $('#rating')[0].scrollIntoView()
+    location.hash = '#rating'
+  }
+
   function choose_star_hotel(o){
     let grand_parent = $(o).parent().parent();
     let parent = $(o).parent();
