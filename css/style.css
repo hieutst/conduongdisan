@@ -44,11 +44,12 @@ nav .navbar-brand{
 .fix-search{
   position: absolute;
   display: flex; 
-  top: 20%;
+  top: 100%;
   left: 59%;
-  transform: translateX(0%);
+  transform: translateY(-50%);
   opacity: 0;
   visibility: hidden;
+  transition: 0.5s;
 }
 
 .fix-search .search-box{
@@ -81,6 +82,7 @@ nav .navbar-brand{
   opacity: 1;
   visibility: visible;
   z-index: 2;
+  transform: translateY(0%);
 }
 /*----------------TRAVEL BANNER--------------------------*/
 .travel_banner{
