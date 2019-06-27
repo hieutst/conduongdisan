@@ -109,7 +109,7 @@ nav .navbar-brand{
 }
 
 .pop-up{
-  
+  /* overflow: hidden; */
 }
 
 .pop-up-map{
@@ -118,26 +118,81 @@ nav .navbar-brand{
   left: 50%;
   border: 1px solid #EDE9E9;
   padding: 10px 10px;
-  color: black;
+  color: white;
   font-size: 15px;
   font-weight: bold;
   background-color: transparent;
-  /* opacity: 0;
-  visibility: visible; */
+  transition: 0.4s;
+  opacity: 0;
+  visibility: visible;
 }
 
 .pop-up:hover .pop-up-map{
-  transform: translate(-50%, -200%);
- 
+  transform: translate(-50%, -300%);
   visibility: visible;
+  opacity: 1; 
+}
+
+.pop-up-map:hover{
+  background-color: #E8E8E8;
+  color: black;
+}
+
+.drop-map{
+  position: absolute;
+  top: 35%;
+  left: 65%;
+  transform: translateX(68%);
+  z-index: 3;
+  width: 100%;
+  height: 100%;
   opacity: 1;
+  visibility: hidden;  
+  transform: rotateY(90deg);
+  transition: 0.5s ease-out;
+}
+
+.drop-map span{
+  position: absolute;
+  z-index: 4;
+  top: -106px;
+  right: -548px;
+  font-weight: bold;
+  padding: 3px 10px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.drop-map span:hover{
+  background-color: black;
+  color: white;
+}
+
+.show{
+  opacity: 1;
+  visibility: visible;
+  z-index: 3;
+  transform: rotateY(0);
 }
 
 
-img.img_banner:hover .pop-up-map{
-  /* transform: translateY(0%);
-  visibility: visible;
-  opacity: 1; */
+.drop-map img{
+  background-color: pink;
+  transform: scale(1.4);
+  border: 1px solid #9F9F9F;
+/*   border-radius: 25px; */
+
+}
+
+.nen-den{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: .5;
+  z-index: 50;
 }
 
 .travel_banner div#banner_2{
