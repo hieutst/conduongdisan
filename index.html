@@ -26,7 +26,7 @@
   </style>
 </head>
 
-<body>
+<body onkeydown="keydownHandler(event)";>
 
   <!-- Start your project here-->
   <!-- Navbar -->
@@ -47,11 +47,11 @@
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="/demo">Thư viện 360°</a>
+      <a class="nav-link" href="#s_library360">Thư viện 360°</a>
     </li>
 
     <li class="nav-item">
-      <a class="nav-link" href="list-tours.html">Tìm tour & Khách sạn</a>
+      <a class="nav-link" href="#s_travel">Tìm tour & Khách sạn</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="#sukien">Sự kiện</a>
@@ -120,7 +120,7 @@
   </ul>
 </div>
 
-<div class="library360" style="display: none;height: 500px;">
+<div class="library360" style="display: none;height: 500px;" >
   <div class="library360__container" style="width: 100%;height: 100%;display: flex;justify-content: space-between;background: #F0F0F0;">
     <div id="library360__map" style="flex-basis: 50%;"></div>
     <div class="library360__details" style="flex-basis: 50%; display: flex; flex-direction: column; align-items: center">

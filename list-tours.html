@@ -33,24 +33,29 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
     <ul class="navbar-nav ml-auto nav-flex-icons">
      <li class="nav-item active">
-      <a class="nav-link" href="#">Du Lịch
+      <a class="nav-link" href="index.html">Trang chủ
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Khách Sạn</a>
+      <a class="nav-link" href="/demo">Thư viện 360°</a>
     </li>
 
     <li class="nav-item">
-      <a class="nav-link" href="#">Vận Chuyển</a>
+      <a class="nav-link" href="list-tours.html">Tìm tour & Khách sạn</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Khuyến Mại</a>
+      <a class="nav-link" href="#sukien">Sự kiện</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Dịch Vụ Khách Hàng</a>
-    </li>
+
     <li class="nav-item">
       <a class="nav-link" href="#">Liên Hệ</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" id="search-index" class="drop-search"><i class="fa fa-search"></i></a>
+      <div class="fix-search" id="fix-search">
+        <input type="text" class="search-box" placeholder="Tìm Kiếm">
+        <a href="detail.html" class="search-btn"><i class="fa fa-search"></i></a>
+      </div>
     </li>
 
     <li class="nav-item avatar dropdown">
@@ -571,10 +576,15 @@
   <h3>Danh Sách Tour Du Lịch</h3>
   <div class="travel_view_list_item">
     <div class="row">
-      <div class="col-md-3 col-sm-12">
+      <div class="col-md-3 col-sm-12 pop-up" style="position: relative;z-index: 100;">
         <a href="">
           <img src="img/list_tours_1.jpg" alt="">
         </a>
+        <button class="pop-up-map" id="pop-up-map-1">Xem lộ trình</button>
+        <div class="container drop-map three" id="drop-map-t-1">
+            <iframe src="https://www.google.com/maps/d/embed?mid=1s-_pR--N3Oz9_sBAVdFU_CbKU8PXCP2I" width="100%" height="500px" style="transform: scaleY(0.5) scaleX(1.1);"></iframe>
+          <span id="esc-map-t-1">X</span>
+        </div>
       </div>
       <div class="col-md-9 col-sm-12">
         <a href=""><h5>Đà Nẵng - Hội An 2N1Đ - Tặng Vé Show Kí Ức Hội An</h5></a>
@@ -623,12 +633,21 @@
     </div>
   </div>
 
+  <div id="nen">
+    
+  </div>
+
   <div class="travel_view_list_item">
     <div class="row">
-      <div class="col-md-3 col-sm-12">
+      <div class="col-md-3 col-sm-12 pop-up">
         <a href="">
           <img src="img/list_tours_3.jpg" alt="">
         </a>
+        <button class="pop-up-map" id="pop-up-map-1">Xem lộ trình</button>
+        <div class="container drop-map three" id="drop-map-t-1">
+            <iframe src="https://www.google.com/maps/d/embed?mid=1s-_pR--N3Oz9_sBAVdFU_CbKU8PXCP2I" width="100%" height="500px" style="transform: scaleY(0.5) scaleX(1.1);"></iframe>
+          <span id="esc-map-t-1">X</span>
+        </div>
       </div>
       <div class="col-md-9 col-sm-12">
         <a href=""><h5>Tour du lịch Đà Nẵng – Hội An – Cố đô Huế – 4 ngày 3 đêm khám phá thiên đường du lịch miền Trung</h5></a>
@@ -679,10 +698,15 @@
 
   <div class="travel_view_list_item">
     <div class="row">
-      <div class="col-md-3 col-sm-12">
+      <div class="col-md-3 col-sm-12 pop-up">
         <a href="">
           <img src="img/list_tours_2.jpg" alt="">
         </a>
+        <button class="pop-up-map" id="pop-up-map-1">Xem lộ trình</button>
+        <div class="container drop-map three" id="drop-map-t-1">
+            <iframe src="https://www.google.com/maps/d/embed?mid=1s-_pR--N3Oz9_sBAVdFU_CbKU8PXCP2I" width="100%" height="500px" style="transform: scaleY(0.5) scaleX(1.1);"></iframe>
+          <span id="esc-map-t-1">X</span>
+        </div>
       </div>
       <div class="col-md-9 col-sm-12">
         <a href=""><h5>Từ Đà Nẵng Sôi Động Đến Hội An Cổ Kính 2N1Đ (Tặng vé show diễn Kí Ức Hội An)</h5></a>
@@ -733,10 +757,15 @@
 
   <div class="travel_view_list_item">
     <div class="row">
-      <div class="col-md-3 col-sm-12">
+      <div class="col-md-3 col-sm-12 pop-up">
         <a href="">
           <img src="img/list_tours_4.jpg" alt="">
         </a>
+        <button class="pop-up-map" id="pop-up-map-1">Xem lộ trình</button>
+        <div class="container drop-map three" id="drop-map-t-1">
+            <iframe src="https://www.google.com/maps/d/embed?mid=1s-_pR--N3Oz9_sBAVdFU_CbKU8PXCP2I" width="100%" height="500px" style="transform: scaleY(0.5) scaleX(1.1);"></iframe>
+          <span id="esc-map-t-1">X</span>
+        </div>
       </div>
       <div class="col-md-9 col-sm-12">
         <a href=""><h5>Tour du lịch Đà Nẵng – Ngũ Hành Sơn – Bà Nà Hills – Cố đô Huế 3 ngày 2 đêm, giá tốt nhất</h5></a>
@@ -787,10 +816,15 @@
 
   <div class="travel_view_list_item">
     <div class="row">
-      <div class="col-md-3 col-sm-12">
+      <div class="col-md-3 col-sm-12 pop-up">
         <a href="">
           <img src="img/list_tours_1.jpg" alt="">
         </a>
+        <button class="pop-up-map" id="pop-up-map-1">Xem lộ trình</button>
+        <div class="container drop-map three" id="drop-map-t-1">
+            <iframe src="https://www.google.com/maps/d/embed?mid=1s-_pR--N3Oz9_sBAVdFU_CbKU8PXCP2I" width="100%" height="500px" style="transform: scaleY(0.5) scaleX(1.1);"></iframe>
+          <span id="esc-map-t-1">X</span>
+        </div>
       </div>
       <div class="col-md-9 col-sm-12">
         <a href=""><h5>Đà Nẵng - Hội An 2N1Đ - Tặng Vé Show Kí Ức Hội An</h5></a>
@@ -1069,6 +1103,10 @@ function format_datetime(i){
 </script>
 <script>
 </script>
+
+<!-- fix script -->
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/2.js"></script>
 </body>
 
 </html>
