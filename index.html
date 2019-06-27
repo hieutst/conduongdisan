@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" id="index">
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
@@ -18,7 +18,7 @@
   <link href="css/style.css" rel="stylesheet">
 </head>
 
-<body >
+<body>
 
   <!-- Start your project here-->
   <!-- Navbar -->
@@ -105,8 +105,45 @@
   <ul>
     <!-- <li id="s_air_ticket" onclick="view_serch(this.id)" class="">Vé Máy Bay</li> -->
     <li id="s_travel" onclick="view_serch(this.id)" class=""><i class="fa fa-search" aria-hidden="true"></i> Tìm tour du lịch</li>
+    <li id="s_library360" onclick="view_library360(this.id)" class=""><i class="far fa-map"
+      aria-hidden="true"></i></i>
+    Thư viện 360°</li>
     <!-- <li id="s_hotel" onclick="view_serch(this.id)" class="">Khách Sạn</li> -->
   </ul>
+</div>
+
+<div class="library360" style="display: none;height: 500px;">
+  <div class="library360__container" style="width: 100%;height: 100%;display: flex;justify-content: space-between;background: #F0F0F0;">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d245368.26132512977!2d107.93769666796429!3d16.071763269271553!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314219c792252a13%3A0x1df0cb4b86727e06!2sDa+Nang%2C+Vietnam!5e0!3m2!1sen!2s!4v1561607849638!5m2!1sen!2s" width="" height="100%" frameborder="0" style="border:0;flex-basis: 50%" allowfullscreen></iframe>
+    <div class="library360__details" style="flex-basis: 50%; display: flex; flex-direction: column; align-items: center">
+      <h2 class="library360__title" style="width: 100%;text-align: center;color: black;font-weight: 700;padding: 5px 0">Các địa điểm ở đà nẵng</h2>
+      <div class="library360__locations" style="width: 100%;padding: 0 5px;display: flex;justify-content: space-between;flex-wrap: wrap;overflow-y: scroll">
+        <div class="library360__location" style="width: 30%;height: 200px;background: red;margin-bottom: 5px">
+          one
+        </div>
+        
+        <div class="library360__location" style="width: 30%;height: 200px;background: red;margin-bottom: 5px">
+          one
+        </div>
+        <div class="library360__location" style="width: 30%;height: 200px;background: red;margin-bottom: 5px">
+          one
+        </div>
+        <div class="library360__location" style="width: 30%;height: 200px;background: red;margin-bottom: 5px">
+          one
+        </div>
+        <div class="library360__location" style="width: 30%;height: 200px;background: red;margin-bottom: 5px">
+          one
+        </div>
+        <div class="library360__location" style="width: 30%;height: 200px;background: red;margin-bottom: 5px">
+          one
+        </div>
+        <div class="library360__location" style="width: 30%;height: 200px;background: red;margin-bottom: 5px">
+          one
+        </div>
+
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="search_body" >
@@ -836,8 +873,8 @@
     </div>
     <div class="col-md-3 col-sm-6 pay_online_item">
       <a href="">
-        <img src="img/dongthienduong.jpg" title="Singapore (Một ngày tự do,Tour Tiết Kiệm)" alt="">
-        <h5>Động Thiên Đường - Điểm đến được ưa chuộng</h5>
+        <img src="img/halong-fix.jpg" title="Singapore (Một ngày tự do,Tour Tiết Kiệm)" alt="">
+        <h5>Hạ Long - Điểm đến được ưa chuộng</h5>
       </a>
       <div class="tRow">
         <div class="tCell">
@@ -855,8 +892,8 @@
     </div>
     <div class="col-md-3 col-sm-6 pay_online_item">
       <a href="">
-        <img src="img/danang-fix.jpg" title="Singapore (Một ngày tự do,Tour Tiết Kiệm)" alt="">
-        <h5>Đà Nẵng - Thỏa sức khám phá</h5>
+        <img src="img/nhatrang-fix.jpg" title="Singapore (Một ngày tự do,Tour Tiết Kiệm)" alt="">
+        <h5>Nha Trang - Thỏa sức khám phá</h5>
       </a>
       <div class="tRow">
         <div class="tCell">
@@ -1321,6 +1358,27 @@
       $(".s_travel_list_search").show(500);
     }
   }
+
+  let library360Status = 0
+    function view_library360() {
+      if (library360Status === 0) {
+        $(".library360").show(500);
+        $(".search_body").hide(500);
+        $(".travel_seach .search_header ul li").each(function (index, el) {
+          $(this).removeClass("search_active");
+        });
+        $('.library360').addClass('search_active')
+        $('#s_library360').addClass('search_active')
+        status = 1;
+        library360Status = 1
+      } else {
+        $(".library360").hide(500);
+        $('.library360').removeClass('search_active')
+        $('#s_library360').removeClass('search_active')
+        library360Status = 0
+      }
+    }
+
   function view_serch(id){
     let o = ("#"+id);
 
@@ -1331,6 +1389,8 @@
         $(this).removeClass("search_active");
         $(o).addClass("search_active");
       });
+      $(".library360").hide(500);
+        library360Status = 0
     }else{
       status = 1;
       $(".search_body").hide(500);
