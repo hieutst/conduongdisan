@@ -167,8 +167,8 @@ nav .navbar-brand{
 .drop-map span{
   position: absolute;
   z-index: 4;
-  top: -106px;
-  right: -548px;
+  top: -49px;
+  right: -143px;
   font-weight: bold;
   padding: 3px 10px;
   background-color: white;
@@ -181,10 +181,10 @@ nav .navbar-brand{
 }
 
 .show{
-  opacity: 1;
-  visibility: visible;
-  z-index: 100;
-  transform: rotateY(0);
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 100 !important;
+  transform: rotateY(0) !important;
 }
 
 
@@ -205,8 +205,8 @@ nav .navbar-brand{
 .drop-map-2 span{
   position: absolute;
   z-index: 4;
-  top: -106px;
-  right: -548px;
+  top: -51px;
+  right: -146px;
   font-weight: bold;
   padding: 3px 10px;
   background-color: white;
@@ -218,6 +218,81 @@ nav .navbar-brand{
   background-color: black;
   color: white;
 }
+
+.drop-map.three{
+  position: absolute;
+  top: -64%;
+  left: 0%;
+  transform: translateX(-50%);
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;  
+  transition: 0.5s ease-out;
+}
+
+.drop-map.three span{
+  position: absolute;
+  z-index: 4;
+  top: 125px;
+  right: -4px;
+  font-weight: bold;
+  padding: 3px 10px;
+  background-color: white;
+  cursor: pointer;
+  z-index: 100;
+}
+
+
+.drop-map.four{
+  top: -58%;
+  left: 0%;
+  transform: translateX(-50%);
+  /* opacity: 1;
+  visibility: visible; */ 
+}
+
+.drop-map.four span{
+  top: 125px;
+  right: -4px;
+}
+
+.drop-map.five{
+  top: -72%;
+  left: 0%;
+  transform: translateX(-50%);
+}
+
+.drop-map.five span{
+  top: 125px;
+  right: -4px;
+}
+
+.drop-map.six{
+  top: -64%;
+  left: 0%;
+  transform: translateX(-50%);
+}
+
+.drop-map.six span{
+  top: 125px;
+  right: -4px;
+}
+
+
+.drop-map.seven{
+  top: -64%;
+  left: 0%;
+  transform: translateX(-50%);
+}
+
+
+.drop-map.seven span{
+  top: 125px;
+  right: -4px;
+}
+
 
 .nen-den{
   position: fixed;

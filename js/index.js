@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	search();
 	drop_map();
 	drop_map_two();
+	drop_tour_list();
 }, false)
 
 function search(){
@@ -50,3 +51,20 @@ function drop_map_two() {
 		nen.classList.remove('nen-den');
 	}
 }
+
+
+
+function keydownHandler(evt)  {
+    var view_road = document.querySelector('#view-map');
+	var drop_map = document.querySelector('#drop-map');
+	var nen = document.querySelector('#nen');
+	var esc = document.querySelector('#esc-map');
+	var drop_map2 = document.querySelector('#drop-map-2');
+	var nen2 = document.querySelector('#nen');
+	var esc2 = document.querySelector('#esc-map-2');
+	drop_map.classList.remove('show');
+	nen.classList.remove('nen-den');
+	drop_map2.classList.remove('show');
+	nen2.classList.remove('nen-den');
+}
+
