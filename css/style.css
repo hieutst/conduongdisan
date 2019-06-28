@@ -244,6 +244,56 @@ nav .navbar-brand{
   z-index: 100;
 }
 
+
+.drop-map.four{
+  top: -58%;
+  left: 0%;
+  transform: translateX(-50%);
+  /* opacity: 1;
+  visibility: visible; */ 
+}
+
+.drop-map.four span{
+  top: 125px;
+  right: -4px;
+}
+
+.drop-map.five{
+  top: -72%;
+  left: 0%;
+  transform: translateX(-50%);
+}
+
+.drop-map.five span{
+  top: 125px;
+  right: -4px;
+}
+
+.drop-map.six{
+  top: -64%;
+  left: 0%;
+  transform: translateX(-50%);
+}
+
+.drop-map.six span{
+  top: 125px;
+  right: -4px;
+}
+
+
+.drop-map.seven{
+  top: -64%;
+  left: 0%;
+  transform: translateX(-50%);
+}
+
+
+.drop-map.seven span{
+  top: 125px;
+  right: -4px;
+}
+
+
 .nen-den{
   position: fixed;
   top: 0;
